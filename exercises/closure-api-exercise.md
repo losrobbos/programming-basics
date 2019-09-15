@@ -57,23 +57,26 @@ Create all functions as arrow function expressions assigned to constant variable
 1. Following the same pattern as above, add a new function to your API called `update`. This function should:
   - accept two parameters: an index and a new element.
   - replace the db element at the given index with the new element (if it already exists).
+  - return the deleted element
   - If there is no existing element at the given index, return an error message.
 
 2. Refactor `update` to change its behavior when there's no `db` element at the given index.
 - This time, instead of returning an error message, it should call the `create` function and pass in the new element. 
 
-3. Refactor the `create` function so it returns a string like: 'New element added! The new length of the array is 7.'
+3. Refactor the `create` function so it prints this message before returning the new length: 'New element added! The new length of the array is 7.'
 
-4. Expose `update` so it can be accessed from outside the `init` function.
+4. Make sure your `update` function is exposed so it can be accessed from outside `init`.
 
 ### Part 4: Add `delete`
+(except call it `remove` because `delete` is a reserved word in JS)
 
-1. Following the same pattern as above, add a new function to your API called `delete`. This function should:
+1. Following the same pattern as above, add a new function to your API called `remove`. This function should:
   - accept one parameter: the index of the element to delete.
   - delete the db element at the given index if it exists.
+  - return the deleted element
   - If there is no existing element at the given index, return an error message.
 
-2. Expose `delete` so it can be accessed from outside the `init` function.
+2. Expose `remove` so it can be accessed from outside the `init` function.
 
 Again, try to hack your db from outside. Can you perform CRUD operations on it without using your API?
 
